@@ -3,9 +3,9 @@ Implementation of distance computations.
 """
 
 # future imports
-from __future__ import division
-from __future__ import absolute_import
-from __future__ import print_function
+
+
+
 
 # global imports
 import scipy.spatial.distance as ssd
@@ -48,5 +48,5 @@ def sqdist_foreach(X1, X2=None):
     pairwise squared-distances in `X1` in each dimension.
     """
     X2 = X1 if (X2 is None) else X2
-    for i in xrange(X1.shape[1]):
+    for i in range(X1.shape[1]):
         yield ssd.cdist(X1[:, i, None], X2[:, i, None], 'sqeuclidean')

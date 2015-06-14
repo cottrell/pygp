@@ -3,9 +3,9 @@ Perform type-II maximum likelihood to fit the hyperparameters of a GP model.
 """
 
 # future imports
-from __future__ import division
-from __future__ import absolute_import
-from __future__ import print_function
+
+
+
 
 # global imports
 import numpy as np
@@ -36,7 +36,7 @@ def optimize(gp, priors=None):
     # of tuples of the form (block, log, prior) for each named prior.
     params = dict((key, (block, log)) for (key, block, log) in get_params(gp))
     priors = dict() if (priors is None) else priors
-    priors = [params[key] + (prior,) for (key, prior) in priors.items()]
+    priors = [params[key] + (prior,) for (key, prior) in list(priors.items())]
     del params
 
     # remove from the active any block where the prior is None.

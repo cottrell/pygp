@@ -3,9 +3,9 @@ Combination classes.
 """
 
 # future imports
-from __future__ import division
-from __future__ import absolute_import
-from __future__ import print_function
+
+
+
 
 # global imports
 import numpy as np
@@ -44,7 +44,7 @@ def product_but(fiterable):
     # use an explicit loop to iteratively set M[-1] equal to the product of
     # A[:-1]. While doing this we can multiply M[i] by A[:i].
     M[-1] = A[0]
-    for i in xrange(1, len(A)-1):
+    for i in range(1, len(A)-1):
         M[i] *= M[-1]
         M[-1] *= A[i]
 

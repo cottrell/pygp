@@ -6,9 +6,9 @@ Kernel tests.
 # pylint: disable=missing-docstring
 
 # future imports
-from __future__ import division
-from __future__ import absolute_import
-from __future__ import print_function
+
+
+
 
 # global imports
 import numpy as np
@@ -142,7 +142,7 @@ class RealKernelTest(KernelTest):
         G2 = np.array([spop.approx_fprime(x2, g, 1e-8, x1, i)
                        for x1 in self.x1
                        for x2 in self.x2
-                       for i in xrange(d)]).reshape(m, n, d, d)
+                       for i in range(d)]).reshape(m, n, d, d)
 
         nt.assert_allclose(G1, G2, rtol=1e-6, atol=1e-6)
 

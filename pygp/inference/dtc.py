@@ -3,9 +3,9 @@ Nystrom approximate inference in a Gaussian process model
 for regression.
 """
 
-from __future__ import division
-from __future__ import absolute_import
-from __future__ import print_function
+
+
+
 
 import numpy as np
 import scipy.linalg as sla

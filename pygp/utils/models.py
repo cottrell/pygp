@@ -3,9 +3,9 @@ Interfaces for parameterized objects.
 """
 
 # future imports
-from __future__ import division
-from __future__ import absolute_import
-from __future__ import print_function
+
+
+
 
 # global imports
 import numpy as np
@@ -18,12 +18,11 @@ from mwhutils.abc import ABCMeta, abstractmethod
 __all__ = ['Parameterized', 'printable', 'get_params']
 
 
-class Parameterized(object):
+class Parameterized(object, metaclass=ABCMeta):
     """
     Interface for objects that are parameterized by some set of
     hyperparameters.
     """
-    __metaclass__ = ABCMeta
 
     @abstractmethod
     def _params(self):

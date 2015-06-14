@@ -3,9 +3,9 @@ Plotting methods for GP objects.
 """
 
 # future imports
-from __future__ import division
-from __future__ import absolute_import
-from __future__ import print_function
+
+
+
 
 # global imports
 import numpy as np
@@ -101,7 +101,7 @@ def plot_samples(model):
 
     offset = 0
     for key, size, log in next(model.__iter__())._params():
-        for i in xrange(size):
+        for i in range(size):
             vals = samples[:, offset+i]
             name = key + ('' if (size == 1) else '_%d' % i)
             if not np.allclose(vals, vals[0]):

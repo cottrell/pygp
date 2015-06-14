@@ -3,9 +3,9 @@ Perform hyperparameter sampling.
 """
 
 # future imports
-from __future__ import division
-from __future__ import absolute_import
-from __future__ import print_function
+
+
+
 
 # global imports
 import numpy as np
@@ -93,7 +93,7 @@ def sample(gp, priors, n, raw=True, rng=None):
             priors[key] = (block, log, priors[key])
 
     # priors is now just a list of the form (block, log, prior).
-    priors = priors.values()
+    priors = list(priors.values())
 
     # get the initial hyperparameters and transform into the non-log space.
     hyper0 = gp.get_hyper()
@@ -130,7 +130,7 @@ def sample(gp, priors, n, raw=True, rng=None):
     x = hyper0.copy()[active]
 
     # do the sampling.
-    for i in xrange(n):
+    for i in range(n):
         x = _slice_sample(logprob, x, rng=rng)
         hypers[i][active] = x
 

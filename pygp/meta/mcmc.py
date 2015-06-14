@@ -4,9 +4,9 @@ added.
 """
 
 # future imports
-from __future__ import division
-from __future__ import absolute_import
-from __future__ import print_function
+
+
+
 
 # global imports
 import numpy as np
@@ -73,8 +73,8 @@ class MCMC(object):
                                rng=self._rng)
 
     def posterior(self, X, grad=False):
-        parts = map(np.array,
-                    zip(*[_.posterior(X, grad) for _ in self._samples]))
+        parts = list(map(np.array,
+                    list(zip(*[_.posterior(X, grad) for _ in self._samples]))))
 
         mu_, s2_ = parts[:2]
         mu = np.mean(mu_, axis=0)

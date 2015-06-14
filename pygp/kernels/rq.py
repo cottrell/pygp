@@ -3,9 +3,9 @@ Kernel which places a prior over periodic functions.
 """
 
 # future imports
-from __future__ import division
-from __future__ import absolute_import
-from __future__ import print_function
+
+
+
 
 # global imports
 import numpy as np
@@ -88,7 +88,7 @@ class RQ(RealKernel):
 
     def dgrad(self, X):
         yield 2 * self.dget(X)
-        for _ in xrange(self.nhyper-2):
+        for _ in range(self.nhyper-2):
             yield np.zeros(len(X))
         yield np.zeros(len(X))
 

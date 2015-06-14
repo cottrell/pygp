@@ -4,9 +4,9 @@ added.
 """
 
 # future imports
-from __future__ import division
-from __future__ import absolute_import
-from __future__ import print_function
+
+
+
 
 # global imports
 import numpy as np
@@ -39,7 +39,7 @@ def _sample_prior(model, priors, n, rng=None):
             del priors[key]
         else:
             priors[key] = (block, log, priors[key])
-    priors = priors.values()
+    priors = list(priors.values())
 
     # sample hyperparameters from prior
     hypers = np.tile(model.get_hyper(), (n, 1))

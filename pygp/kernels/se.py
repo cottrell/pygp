@@ -3,9 +3,9 @@ Implementation of the squared-exponential kernels.
 """
 
 # future imports
-from __future__ import division
-from __future__ import absolute_import
-from __future__ import print_function
+
+
+
 
 # global imports
 import numpy as np
@@ -70,7 +70,7 @@ class SE(RealKernel):
 
     def dgrad(self, X):
         yield 2 * self.dget(X)
-        for _ in xrange(self.nhyper-1):
+        for _ in range(self.nhyper-1):
             yield np.zeros(len(X))
 
     def gradx(self, X1, X2=None):
